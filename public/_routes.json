@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": [
+    "/api/*",
+    "/teacher-dashboard",
+    "/messages",
+    "/post-hiring-request",
+    "/admin-review",
+    "/admin-review-kenya",
+    "/teacher"
+  ],
+  "exclude": [
+    "/*.{js,css,map,png,jpg,jpeg,gif,svg,ico,woff2,json,txt}"
+  ]
+}

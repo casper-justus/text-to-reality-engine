@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "deploy": "wrangler pages deploy public",
+    "build:functions": "node scripts/build-functions.mjs",
+    "deploy": "npm run build:functions && wrangler pages deploy public",
     "setup": "node scripts/setup.js"
   },
   "devDependencies": {

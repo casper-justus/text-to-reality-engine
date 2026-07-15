@@ -1,4 +1,4 @@
-import { getTeacher, json } from "./_db.js";
+import { getTeacher, json } from "../_db.js";
 
 export async function onRequest(context) {
   const id = new URL(context.request.url).searchParams.get("id");

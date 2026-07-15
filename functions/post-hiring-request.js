@@ -1,5 +1,5 @@
-import { serveGuarded } from "../guard.js";
+import { serveGuarded } from "./guard.js";
 
 export async function onRequest(context) {
-  return serveGuarded("public/post-hiring-request.html", context.request, context);
+  return serveGuarded("post-hiring-request", context.request, context);
 }

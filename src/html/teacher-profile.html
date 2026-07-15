@@ -127,7 +127,7 @@
   }
   var id = new URLSearchParams(location.search).get('id');
   if (!id) { fail('No teacher specified.'); return; }
-  fetch('/api/teachers/' + encodeURIComponent(id))
+  fetch('/api/teachers?id=' + encodeURIComponent(id))
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(t){ if (!t) fail('Teacher not found.'); else render(t); })
     .catch(function(){ fail('Could not load profile.'); });
