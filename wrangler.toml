@@ -1,0 +1,9 @@
+name = "text-to-reality-engine"
+pages_build_output_dir = "public"
+compatibility_date = "2024-09-23"
+
+# Bind a D1 sqlite database for users, teachers and hiring requests.
+[[d1_databases]]
+binding = "DB"
+database_name = "edumarket"
+database_id = "fc0ac629-31bf-4b17-8d86-e5657d5d4164"

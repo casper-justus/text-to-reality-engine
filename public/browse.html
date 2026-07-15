@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teacher Directory | EduMarket Kenya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=Source+Sans+3:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;family=Source+Sans+3:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        background:"#f7f9ff", on-error:"#ffffff", on-background:"#181c20",
+        surface-tint:"#255dad", inverse-primary:"#abc7ff",
+        surface-container-high:"#e5e8ee", secondary:"#3b6934",
+        surface-container-lowest:"#ffffff", tertiary:"#661a00", primary-container:"#004a99",
+        secondary-fixed-dim:"#a1d494", surface-container-highest:"#dfe3e9", outline-variant:"#c2c6d3",
+        on-primary:"#ffffff", surface-container-low:"#f1f4fa", tertiary-fixed-dim:"#ffb59e",
+        on-surface:"#181c20", primary:"#00346f", tertiary-fixed:"#ffdbd0", inverse-surface:"#2d3135",
+        on-primary-fixed-variant:"#00458f", primary-fixed:"#d7e2ff", inverse-on-surface:"#eef1f7",
+        error:"#ba1a1a", surface-bright:"#f7f9ff", surface-variant:"#dfe3e9", on-secondary:"#ffffff",
+        on-tertiary:"#ffffff", error-container:"#ffdad6", on-tertiary-container:"#ffa68a",
+        on-secondary-fixed:"#002201", on-primary-fixed:"#001b3f", on-secondary-fixed-variant:"#23501e",
+        secondary-container:"#b9eeab", on-tertiary-fixed:"#3a0b00", surface:"#f7f9ff",
+        surface-container:"#ebeef4", on-surface-variant:"#424751", primary-fixed-dim:"#abc7ff",
+        outline:"#737783", secondary-fixed:"#bcf0ae", on-secondary-container:"#3f6d38",
+        on-primary-container:"#9bbdff", verified:"#0369A1", success:"#15803D"
+      },
+      fontFamily: {
+        headline:['"Plus Jakarta Sans"','Inter','sans-serif'],
+        body:['Inter','"Source Sans 3"','sans-serif'],
+        label:['"Source Sans 3"','monospace']
+      },
+      borderRadius:{DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px"},
+      spacing:{ "container-max":"1280px", gutter:"24px", "margin-desktop":"40px",
+        "margin-mobile":"16px", "section-gap":"80px", "stack-sm":"8px", "stack-md":"16px", "stack-lg":"32px" }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined{ font-variation-settings:'FILL' 0,'wght' 400; }
+  .band-A{ background:#FEF3C7; color:#B45309; }
+  .band-B{ background:#F1F5F9; color:#475569; }
+  .band-C{ background:#FFEDD5; color:#78350F; }
+</style>
+
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full bg-gradient-to-b from-surface to-surface-container-low border-b border-outline-variant shadow-sm">
+  <div class="max-w-container-max mx-auto px-margin-desktop h-20 flex justify-between items-center">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="font-headline font-bold text-xl text-primary flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">school</span> EduMarket</a>
+      <nav class="relative hidden md:flex items-center gap-7" style="position:relative">
+        <a class="nav-directory font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Directory</a>
+        <a class="nav-pricing font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+        <a class="nav-schools font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="for-schools.html">For Schools</a>
+        <a class="nav-teachers font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="login.html">For Teachers</a>
+        <span id="nav-indicator" style="position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,#00346f,#661a00); border-radius:9999px; transition:left .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1); opacity:0;"></span>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="text-on-surface-variant hover:text-primary font-body">Sign in</a>
+      <a href="post-hiring-request.html" class="bg-tertiary text-on-tertiary px-5 py-2.5 rounded-full font-label font-semibold hover:opacity-90 transition active:scale-95">Request Shortlist</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-container-max mx-auto px-margin-desktop py-8">
+  <div class="mb-6">
+    <h1 class="font-headline font-bold text-3xl text-primary">Teacher Directory</h1>
+    <p class="text-on-surface-variant mt-1">Browse TSC-verified educators. Filter by subject, curriculum and location.</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-8">
+    <!-- Filters -->
+    <aside class="w-full md:w-72 flex-shrink-0 space-y-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+        <div class="relative mb-4">
+          <span class="material-symbols-outlined text-on-surface-variant absolute left-3 top-3 text-[20px]">search</span>
+          <input id="f-search" type="text" placeholder="Search name or subject" class="w-full bg-surface-container-low rounded-lg pl-10 pr-3 py-2.5 text-body-md border border-transparent focus:border-primary focus:bg-white outline-none"/>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label class="font-label font-semibold uppercase tracking-wide text-on-surface-variant text-xs">Subject</label>
+            <select id="f-subject" class="w-full mt-1 bg-surface-container-low rounded-lg px-3 py-2 text-body-md border border-transparent focus:border-primary outline-none">
+              <option value="">All subjects</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-label font-semibold uppercase tracking-wide text-on-surface-variant text-xs">Location</label>
+            <select id="f-location" class="w-full mt-1 bg-surface-container-low rounded-lg px-3 py-2 text-body-md border border-transparent focus:border-primary outline-none">
+              <option value="">All locations</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-label font-semibold uppercase tracking-wide text-on-surface-variant text-xs">Curriculum</label>
+            <select id="f-curriculum" class="w-full mt-1 bg-surface-container-low rounded-lg px-3 py-2 text-body-md border border-transparent focus:border-primary outline-none">
+              <option value="">All curricula</option><option value="CBC">CBC</option><option value="8-4-4">8-4-4</option><option value="British">British</option><option value="IGCSE">IGCSE</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-label font-semibold uppercase tracking-wide text-on-surface-variant text-xs">Quality Band</label>
+            <div class="flex gap-2 mt-1">
+              <button data-band="" class="band-filter flex-1 py-2 rounded-lg border border-outline-variant text-body-sm font-semibold bg-surface-container-low">All</button>
+              <button data-band="A" class="band-filter flex-1 py-2 rounded-lg border border-outline-variant text-body-sm font-semibold">A</button>
+              <button data-band="B" class="band-filter flex-1 py-2 rounded-lg border border-outline-variant text-body-sm font-semibold">B</button>
+              <button data-band="C" class="band-filter flex-1 py-2 rounded-lg border border-outline-variant text-body-sm font-semibold">C</button>
+            </div>
+          </div>
+          <div>
+            <label class="font-label font-semibold uppercase tracking-wide text-on-surface-variant text-xs">Verified only</label>
+            <label class="flex items-center gap-2 mt-1 cursor-pointer">
+              <input id="f-verified" type="checkbox" class="accent-primary w-4 h-4"/>
+              <span class="text-body-md">TSC verified</span>
+            </label>
+          </div>
+          <div>
+            <label class="font-label font-semibold uppercase tracking-wide text-on-surface-variant text-xs">Sort by</label>
+            <select id="f-sort" class="w-full mt-1 bg-surface-container-low rounded-lg px-3 py-2 text-body-md border border-transparent focus:border-primary outline-none">
+              <option value="band">Quality band</option>
+              <option value="salary">Salary (high → low)</option>
+              <option value="experience">Experience</option>
+            </select>
+          </div>
+          <button id="f-reset" class="w-full text-on-surface-variant text-body-sm hover:text-primary underline">Reset filters</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Results -->
+    <section class="flex-1">
+      <div class="flex justify-between items-center mb-4">
+        <span id="result-count" class="text-on-surface-variant text-body-md"></span>
+      </div>
+      <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+      <div id="empty" class="hidden text-center py-16 text-on-surface-variant">No teachers match these filters.</div>
+    </section>
+  </div>
+</main>
+
+<!-- Profile modal -->
+<div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/40 p-4">
+  <div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-outline-variant">
+    <div id="modal-body" class="p-6"></div>
+    <div class="px-6 py-4 border-t border-outline-variant flex justify-end gap-3">
+      <button onclick="closeModal()" class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low">Close</button>
+      <a href="post-hiring-request.html" class="bg-tertiary text-on-tertiary px-5 py-2 rounded-lg font-label font-semibold hover:opacity-90">Request this teacher</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const BAND = { A:{cls:'band-A',label:'Band A'}, B:{cls:'band-B',label:'Band B'}, C:{cls:'band-C',label:'Band C'} };
+const state = { search:'', subject:'', location:'', curriculum:'', band:'', verified:false, sort:'band' };
+let TEACHERS = [];
+
+const fmt = n => 'KES ' + n.toLocaleString('en-KE');
+const initials = n => n.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+
+function avatar(t){
+  return `<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline font-bold flex-shrink-0">${initials(t.name)}</div>`;
+}
+
+function card(t){
+  const b = BAND[t.band] || BAND.C;
+  const verified = t.verified ? `<span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">verified</span>` : '';
+  return `
+  <div class="bg-surface-container-lowest rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition p-4 flex flex-col gap-3">
+    <div class="flex items-start gap-3">
+      ${avatar(t)}
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-headline font-bold text-on-surface truncate">${t.name}</h3>
+          <span class="text-[11px] font-label font-bold px-2 py-0.5 rounded-full ${b.cls}">${t.band}</span>
+        </div>
+        <p class="text-body-sm text-on-surface-variant truncate">${t.subject} · ${t.experience} yrs</p>
+        <p class="text-body-sm text-on-surface-variant truncate flex items-center gap-1">${verified} ${t.location} · ${t.curriculum}</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between pt-2 border-t border-outline-variant">
+      <span class="font-headline font-bold text-primary text-base">${fmt(t.salary_low)}–${fmt(t.salary_high)}</span>
+      <button onclick="openModal('${t.id}')" class="text-tertiary text-body-sm font-semibold hover:underline">View profile</button>
+    </div>
+  </div>`;
+}
+
+function apply(){
+  let list = TEACHERS.filter(t=>{
+    if(state.search && !(`${t.name} ${t.subject}`.toLowerCase().includes(state.search.toLowerCase()))) return false;
+    if(state.subject && t.subject!==state.subject) return false;
+    if(state.location && t.location!==state.location) return false;
+    if(state.curriculum && t.curriculum!==state.curriculum) return false;
+    if(state.band && t.band!==state.band) return false;
+    if(state.verified && !t.verified) return false;
+    return true;
+  });
+  if(state.sort==='salary') list.sort((a,b)=>b.salary_high-a.salary_high);
+  else if(state.sort==='experience') list.sort((a,b)=>b.experience-a.experience);
+  else list.sort((a,b)=> a.band.localeCompare(b.band) || b.salary_high-a.salary_high);
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = list.map(card).join('');
+  document.getElementById('result-count').textContent = `${list.length} teacher${list.length!==1?'s':''} found`;
+  document.getElementById('empty').classList.toggle('hidden', list.length>0);
+}
+
+function fillSelect(id, key){
+  const sel = document.getElementById(id);
+  const vals = [...new Set(TEACHERS.map(t=>t[key]))].sort();
+  vals.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); });
+}
+
+function openModal(id){
+  const t = TEACHERS.find(x=>x.id===id); if(!t) return;
+  const b = BAND[t.band] || BAND.C;
+  const verified = t.verified ? `<span class="material-symbols-outlined text-verified align-middle" style="font-variation-settings:'FILL' 1;">verified</span> Verified` : 'Not yet verified';
+  document.getElementById('modal-body').innerHTML = `
+    <div class="flex items-center gap-4 mb-4">
+      <div class="w-16 h-16 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline font-bold text-xl">${initials(t.name)}</div>
+      <div>
+        <h2 class="font-headline font-bold text-xl">${t.name}</h2>
+        <p class="text-on-surface-variant">${t.subject} · ${t.experience} years experience</p>
+        <span class="text-[11px] font-label font-bold px-2 py-0.5 rounded-full ${b.cls}">${t.band}</span>
+      </div>
+    </div>
+    <dl class="grid grid-cols-2 gap-y-3 gap-x-4 text-body-md">
+      <div><dt class="text-on-surface-variant text-xs uppercase">Location</dt><dd>${t.location}</dd></div>
+      <div><dt class="text-on-surface-variant text-xs uppercase">Curriculum</dt><dd>${t.curriculum}</dd></div>
+      <div><dt class="text-on-surface-variant text-xs uppercase">Status</dt><dd class="text-verified">${verified}</dd></div>
+      <div><dt class="text-on-surface-variant text-xs uppercase">Expected salary</dt><dd class="font-headline font-bold text-primary">${fmt(t.salary_low)}–${fmt(t.salary_high)}</dd></div>
+    </dl>
+    <p class="mt-4 text-on-surface-variant">Pre-vetted educator from the EduMarket marketplace. Request a shortlist to start the interview process.</p>`;
+  const m=document.getElementById('modal');
+  m.classList.remove('hidden'); m.classList.add('flex');
+}
+function closeModal(){ const m=document.getElementById('modal'); m.classList.add('hidden'); m.classList.remove('flex'); }
+document.getElementById('modal').addEventListener('click', e=>{ if(e.target.id==='modal') closeModal(); });
+
+// Wire filters
+document.getElementById('f-search').addEventListener('input', e=>{ state.search=e.target.value; apply(); });
+document.getElementById('f-subject').addEventListener('change', e=>{ state.subject=e.target.value; apply(); });
+document.getElementById('f-location').addEventListener('change', e=>{ state.location=e.target.value; apply(); });
+document.getElementById('f-curriculum').addEventListener('change', e=>{ state.curriculum=e.target.value; apply(); });
+document.getElementById('f-verified').addEventListener('change', e=>{ state.verified=e.target.checked; apply(); });
+document.getElementById('f-sort').addEventListener('change', e=>{ state.sort=e.target.value; apply(); });
+document.querySelectorAll('.band-filter').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    state.band = btn.dataset.band;
+    document.querySelectorAll('.band-filter').forEach(b=>{ b.classList.remove('bg-primary','text-on-primary'); b.classList.add('bg-surface-container-low'); });
+    if(state.band===''){ btn.classList.add('bg-primary','text-on-primary'); btn.classList.remove('bg-surface-container-low'); }
+    else { btn.classList.add('bg-primary','text-on-primary'); btn.classList.remove('bg-surface-container-low'); }
+    apply();
+  });
+});
+document.getElementById('f-reset').addEventListener('click', ()=>{
+  state.search=state.subject=state.location=state.curriculum=state.band=''; state.verified=false; state.sort='band';
+  document.getElementById('f-search').value=''; document.getElementById('f-subject').value='';
+  document.getElementById('f-location').value=''; document.getElementById('f-curriculum').value='';
+  document.getElementById('f-verified').checked=false; document.getElementById('f-sort').value='band';
+  document.querySelectorAll('.band-filter').forEach(b=>{ b.classList.remove('bg-primary','text-on-primary'); b.classList.add('bg-surface-container-low'); });
+  apply();
+});
+
+(async ()=>{
+  try {
+    const res = await fetch('/api/teachers');
+    TEACHERS = (await res.json()).teachers || [];
+  } catch(e){ TEACHERS = []; }
+  if(!TEACHERS.length){
+    document.getElementById('grid').innerHTML = '<p class="text-on-surface-variant">Could not load teachers. Please try again.</p>';
+    return;
+  }
+  fillSelect('f-subject','subject');
+  fillSelect('f-location','location');
+  apply();
+})();
+</script>
+
+<script src="/ui.js"></script>
+</body>
+</html>

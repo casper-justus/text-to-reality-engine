@@ -1,0 +1,490 @@
+
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compare Teachers | EduMarket Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 240px repeat(3, 1fr);
+        }
+    </style>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#1e40af",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "on-surface": "#0b1c30",
+                        "surface-container-low": "#eff4ff",
+                        "band-c-bronze": "#78350F",
+                        "inverse-surface": "#213145",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "band-b-silver": "#475569",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-background": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#444653",
+                        "on-secondary-container": "#5c647a",
+                        "on-tertiary-fixed": "#001a42",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#9cbbff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#173bab",
+                        "secondary-fixed": "#dae2fd",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#d8e2ff",
+                        "primary": "#00288e",
+                        "inverse-primary": "#b8c4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "primary-fixed": "#dde1ff",
+                        "outline-variant": "#c4c5d5",
+                        "surface-tint": "#3755c3",
+                        "secondary-container": "#dae2fd",
+                        "outline": "#757684",
+                        "band-b-bg": "#F1F5F9",
+                        "on-primary-container": "#a8b8ff",
+                        "secondary": "#565e74",
+                        "verified-blue": "#0369A1",
+                        "tertiary": "#003272",
+                        "success-green": "#15803D",
+                        "on-primary-fixed": "#001453",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-muted": "#F8FAFC",
+                        "band-c-bg": "#FFEDD5",
+                        "band-a-gold": "#B45309",
+                        "on-secondary-fixed": "#131b2e",
+                        "band-a-bg": "#FEF3C7",
+                        "surface-container": "#e5eeff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#00489e",
+                        "surface-bright": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "section-gap": "80px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "price-display": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "price-display": ["28px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+
+</head>
+<body class="bg-surface-muted font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-200">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-stack-lg">
+<span class="font-headline-md text-headline-md font-bold text-primary">EduMarket</span>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Browse Teachers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="compare.html#standards">Quality Standards</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-sm">
+<button class="px-4 py-2 text-primary font-semibold hover:bg-surface-container-low transition-colors rounded-lg active:scale-95 transition-transform">Sign In</button>
+<button class="px-6 py-2 bg-primary-container text-on-primary text-white font-semibold rounded-lg hover:bg-primary transition-colors active:scale-95 transition-transform">Hire Talent</button>
+</div>
+</div>
+</nav>
+<div class="flex">
+<!-- SideNavBar -->
+
+<div class="mb-stack-lg px-2">
+<div class="flex items-center gap-3 mb-2">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a high-ranking school administrator, wearing a structured navy blazer, looking confident and approachable. The background is a blurred modern office setting with warm wood tones and professional lighting, conveying institutional trust and leadership." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div>
+<p class="font-headline-sm text-headline-sm font-bold text-primary truncate">Admin Dashboard</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verified Institution</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-primary-container text-white font-semibold rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps">Shortlist</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">Hiring Pipeline</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-label-caps text-label-caps">Verification Status</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-outline-variant pt-4">
+<button class="w-full mb-stack-md py-3 px-4 bg-primary text-white font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all">Request Assessment</button>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-caps text-label-caps">Sign Out</span>
+</a>
+</div>
+
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 pb-32">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 w-full bg-gradient-to-b from-surface to-surface-container-low border-b border-outline-variant shadow-sm">
+  <div class="max-w-container-max mx-auto px-margin-desktop h-20 flex justify-between items-center">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="font-headline font-bold text-xl text-primary flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">school</span> EduMarket</a>
+      <nav class="relative hidden md:flex items-center gap-7" style="position:relative">
+        <a class="nav-directory font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Directory</a>
+        <a class="nav-pricing font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+        <a class="nav-schools font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="for-schools.html">For Schools</a>
+        <a class="nav-teachers font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="login.html">For Teachers</a>
+        <span id="nav-indicator" style="position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,#00346f,#661a00); border-radius:9999px; transition:left .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1); opacity:0;"></span>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="text-on-surface-variant hover:text-primary font-body">Sign in</a>
+      <a href="post-hiring-request.html" class="bg-tertiary text-on-tertiary px-5 py-2.5 rounded-full font-label font-semibold hover:opacity-90 transition active:scale-95">Request Shortlist</a>
+    </div>
+  </div>
+</header>
+<!-- Comparison Table Container -->
+<section class="px-margin-desktop max-w-container-max mx-auto mt-stack-lg">
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<!-- Comparison Grid Header (Static Row) -->
+<div class="comparison-grid border-b border-outline-variant bg-surface-container-lowest">
+<div class="p-6 border-r border-outline-variant flex items-center justify-center bg-surface-muted">
+<span class="font-label-caps text-label-caps text-outline">CRITERIA</span>
+</div>
+<!-- Candidate 1 -->
+<div class="p-6 border-r border-outline-variant relative group">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-error">close</span>
+</div>
+<div class="flex flex-col items-center text-center gap-stack-sm">
+<div class="relative">
+<img class="w-20 h-20 rounded-full object-cover border-2 border-surface-variant" data-alt="A studio portrait of a female mathematics teacher with a bright, welcoming smile. She is in her late 30s, wearing professional attire, against a clean, neutral gray background. The lighting is crisp and academic, highlighting a sense of warmth and professional competence." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-verified-blue text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Dr. Elena Rodriguez</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Advanced Mathematics</p>
+</div>
+</div>
+</div>
+<!-- Candidate 2 -->
+<div class="p-6 border-r border-outline-variant bg-primary-container/5 relative">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-error">close</span>
+</div>
+<div class="flex flex-col items-center text-center gap-stack-sm">
+<div class="relative">
+<img class="w-20 h-20 rounded-full object-cover border-2 border-primary" data-alt="A portrait of a male science teacher with a friendly and intelligent expression. He is wearing a smart casual sweater and glasses, posed in a bright, modern learning space with blurred laboratory equipment in the background. The aesthetic is clean, professional, and sophisticated." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-verified-blue text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Marcus Thorne</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Physics & Chemistry</p>
+</div>
+</div>
+</div>
+<!-- Candidate 3 -->
+<div class="p-6 relative">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-error">close</span>
+</div>
+<div class="flex flex-col items-center text-center gap-stack-sm">
+<div class="relative">
+<img class="w-20 h-20 rounded-full object-cover border-2 border-surface-variant" data-alt="A portrait of a middle-aged female educator with an air of authority and grace. She has silver hair and is wearing a sophisticated dark blazer. The lighting is soft and high-key, creating an atmosphere of deep institutional trust and extensive experience. Background is a minimalist library." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-verified-blue text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Sarah Jenkins</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">English Literature</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparison Rows -->
+<div class="flex flex-col">
+<!-- Assessment Band -->
+<div class="comparison-grid border-b border-outline-variant hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">analytics</span>
+<span class="font-label-caps text-label-caps">Assessment Band</span>
+</div>
+<div class="p-4 border-r border-outline-variant flex justify-center items-center">
+<span class="bg-band-a-bg text-band-a-gold font-headline-sm px-4 py-1 rounded-lg border border-band-a-gold/20 font-bold">A</span>
+</div>
+<div class="p-4 border-r border-outline-variant flex justify-center items-center bg-primary-container/5">
+<span class="bg-band-a-bg text-band-a-gold font-headline-sm px-4 py-1 rounded-lg border border-band-a-gold/20 font-bold">A</span>
+</div>
+<div class="p-4 flex justify-center items-center">
+<span class="bg-band-b-bg text-band-b-silver font-headline-sm px-4 py-1 rounded-lg border border-band-b-silver/20 font-bold">B</span>
+</div>
+</div>
+<!-- Salary Band -->
+<div class="comparison-grid border-b border-outline-variant hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">payments</span>
+<span class="font-label-caps text-label-caps">Salary Band</span>
+</div>
+<div class="p-4 border-r border-outline-variant text-center">
+<p class="font-price-display text-price-display text-primary">$85k - $105k</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Annual Base</p>
+</div>
+<div class="p-4 border-r border-outline-variant text-center bg-primary-container/5">
+<p class="font-price-display text-price-display text-primary">$90k - $115k</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Annual Base</p>
+</div>
+<div class="p-4 text-center">
+<p class="font-price-display text-price-display text-primary">$75k - $90k</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Annual Base</p>
+</div>
+</div>
+<!-- Experience -->
+<div class="comparison-grid border-b border-outline-variant hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">history_edu</span>
+<span class="font-label-caps text-label-caps">Experience</span>
+</div>
+<div class="p-4 border-r border-outline-variant text-center">
+<p class="font-headline-sm text-headline-sm">12 Years</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">IB Curriculum Expert</p>
+</div>
+<div class="p-4 border-r border-outline-variant text-center bg-primary-container/5">
+<p class="font-headline-sm text-headline-sm">8 Years</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AP Specialist</p>
+</div>
+<div class="p-4 text-center">
+<p class="font-headline-sm text-headline-sm">15 Years</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dept. Head Experience</p>
+</div>
+</div>
+<!-- Grade Level -->
+<div class="comparison-grid border-b border-outline-variant hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">school</span>
+<span class="font-label-caps text-label-caps">Grade Levels</span>
+</div>
+<div class="p-4 border-r border-outline-variant flex flex-wrap justify-center gap-1">
+<span class="px-2 py-0.5 bg-surface-container rounded font-body-sm">9-12</span>
+</div>
+<div class="p-4 border-r border-outline-variant flex flex-wrap justify-center gap-1 bg-primary-container/5">
+<span class="px-2 py-0.5 bg-surface-container rounded font-body-sm">10-12</span>
+<span class="px-2 py-0.5 bg-surface-container rounded font-body-sm">Undergrad</span>
+</div>
+<div class="p-4 flex flex-wrap justify-center gap-1">
+<span class="px-2 py-0.5 bg-surface-container rounded font-body-sm">6-12</span>
+</div>
+</div>
+<!-- Availability -->
+<div class="comparison-grid border-b border-outline-variant hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">event_available</span>
+<span class="font-label-caps text-label-caps">Availability</span>
+</div>
+<div class="p-4 border-r border-outline-variant text-center">
+<p class="font-body-md text-body-md text-success-green font-semibold">Immediate</p>
+</div>
+<div class="p-4 border-r border-outline-variant text-center bg-primary-container/5">
+<p class="font-body-md text-body-md text-primary font-semibold">Fall 2024</p>
+</div>
+<div class="p-4 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">30 Day Notice</p>
+</div>
+</div>
+<!-- Verification Status -->
+<div class="comparison-grid border-b border-outline-variant hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">task_alt</span>
+<span class="font-label-caps text-label-caps">Verification</span>
+</div>
+<div class="p-4 border-r border-outline-variant text-center">
+<div class="flex items-center justify-center gap-1 text-success-green">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm">Full Audit Clear</span>
+</div>
+</div>
+<div class="p-4 border-r border-outline-variant text-center bg-primary-container/5">
+<div class="flex items-center justify-center gap-1 text-success-green">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm">Full Audit Clear</span>
+</div>
+</div>
+<div class="p-4 text-center">
+<div class="flex items-center justify-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">pending</span>
+<span class="font-body-sm">In Final Review</span>
+</div>
+</div>
+</div>
+<!-- Teaching Sample -->
+<div class="comparison-grid hover:bg-surface-muted transition-colors">
+<div class="p-4 border-r border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">smart_display</span>
+<span class="font-label-caps text-label-caps">Teaching Sample</span>
+</div>
+<div class="p-4 border-r border-outline-variant text-center">
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-semibold font-body-sm" href="#">
+                                    View Lecture <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<div class="p-4 border-r border-outline-variant text-center bg-primary-container/5">
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-semibold font-body-sm" href="#">
+                                    View Lecture <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<div class="p-4 text-center">
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-semibold font-body-sm" href="#">
+                                    View Portfolio <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Action Rail -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 glass-header border-t border-outline-variant md:left-64">
+<div class="max-w-container-max mx-auto px-margin-desktop py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Small thumbnail profile of Dr. Elena Rodriguez for the sticky action bar." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Small thumbnail profile of Marcus Thorne for the sticky action bar." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Small thumbnail profile of Sarah Jenkins for the sticky action bar." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<p class="font-body-md text-body-md font-semibold text-primary">3 Candidates Selected for Action</p>
+</div>
+<div class="flex items-center gap-stack-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-6 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-surface-container-low transition-all active:scale-95">
+                            Invite to Interview
+                        </button>
+<button class="flex-1 sm:flex-none px-8 py-3 bg-primary text-white font-bold rounded-lg hover:shadow-lg hover:opacity-90 transition-all active:scale-95">
+                            Request Shortlist
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-stack-lg relative z-10 md:ml-64">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-stack-md">
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">EduMarket</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 EduMarket. Institutional Trust & Operational Efficiency.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-md">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all hover:underline" href="for-schools.html#terms">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all hover:underline" href="for-schools.html#privacy">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all hover:underline" href="teacher-dashboard.html#verification">Verification Protocol</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all hover:underline" href="compare.html#salary">Salary Transparency Report</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all hover:underline" href="compare.html#standards">Quality Standards</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple interaction for the close buttons
+        document.querySelectorAll('.material-symbols-outlined.text-outline.cursor-pointer.hover\\:text-error').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const column = this.closest('.comparison-grid');
+                // In a real app, this would hide the logic for the specific column
+                alert('In a live environment, this would remove the candidate from comparison.');
+            });
+        });
+
+        // Hover effect for comparison rows
+        const rows = document.querySelectorAll('.comparison-grid');
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.classList.add('shadow-inner');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.classList.remove('shadow-inner');
+            });
+        });
+    </script>
+
+<script src="/ui.js"></script>
+</body></html>

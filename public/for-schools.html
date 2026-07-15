@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduMarket Kenya | For Schools - Hire TSC-Verified Teachers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Source+Sans+3:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;family=Source+Sans+3:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ffa68a",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#661a00",
+                    "surface-variant": "#dfe3e9",
+                    "on-secondary-container": "#3f6d38",
+                    "background": "#f7f9ff",
+                    "on-tertiary-fixed-variant": "#832604",
+                    "secondary-fixed": "#bcf0ae",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface": "#f7f9ff",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#9bbdff",
+                    "surface-container": "#ebeef4",
+                    "primary-container": "#004a99",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#181c20",
+                    "surface-container-low": "#f1f4fa",
+                    "primary-fixed-dim": "#abc7ff",
+                    "outline": "#737783",
+                    "secondary-fixed-dim": "#a1d494",
+                    "surface-dim": "#d7dae0",
+                    "on-background": "#181c20",
+                    "surface-tint": "#255dad",
+                    "primary": "#00346f",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#dfe3e9",
+                    "outline-variant": "#c2c6d3",
+                    "on-primary-fixed": "#001b3f",
+                    "inverse-primary": "#abc7ff",
+                    "on-primary-fixed-variant": "#00458f",
+                    "on-secondary-fixed-variant": "#23501e",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eef1f7",
+                    "surface-container-high": "#e5e8ee",
+                    "secondary-container": "#b9eeab",
+                    "on-secondary-fixed": "#002201",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7f9ff",
+                    "on-error": "#ffffff",
+                    "secondary": "#3b6934",
+                    "on-surface-variant": "#424751",
+                    "inverse-surface": "#2d3135",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "tertiary-container": "#8a2b08",
+                    "primary-fixed": "#d7e2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "container-max": "1280px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["\"Source Sans 3\""],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(226, 230, 243, 0.5);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .verification-glow {
+            box-shadow: 0 0 15px rgba(59, 105, 52, 0.1);
+        }
+    </style>
+
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-gradient-to-b from-surface to-surface-container-low border-b border-outline-variant shadow-sm">
+  <div class="max-w-container-max mx-auto px-margin-desktop h-20 flex justify-between items-center">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="font-headline font-bold text-xl text-primary flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">school</span> EduMarket</a>
+      <nav class="relative hidden md:flex items-center gap-7" style="position:relative">
+        <a class="nav-directory font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Directory</a>
+        <a class="nav-pricing font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+        <a class="nav-schools font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="for-schools.html">For Schools</a>
+        <a class="nav-teachers font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="login.html">For Teachers</a>
+        <span id="nav-indicator" style="position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,#00346f,#661a00); border-radius:9999px; transition:left .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1); opacity:0;"></span>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="text-on-surface-variant hover:text-primary font-body">Sign in</a>
+      <a href="post-hiring-request.html" class="bg-tertiary text-on-tertiary px-5 py-2.5 rounded-full font-label font-semibold hover:opacity-90 transition active:scale-95">Request Shortlist</a>
+    </div>
+  </div>
+</header>
+<main class="relative overflow-hidden">
+<!-- Hero Section -->
+<section class="relative pt-16 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="bento-grid">
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full w-fit mb-6">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">TSC Accredited Partner</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 leading-tight">
+                        Hire the Best <span class="text-secondary">TSC-Verified</span> Teachers for Your School.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        Streamline your recruitment for CBC and 8-4-4 curriculums. Access a vetted pool of educators with transparent KES salary expectations and regional placement history.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-2 group">
+                            Request Shortlist
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white border border-outline-variant text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-low transition-all">
+                            View Teacher Directory
+                        </button>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 relative">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="relative glass-card rounded-3xl p-6 shadow-xl verification-glow">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-primary">Live Vetting Stats</h3>
+<span class="bg-secondary text-on-secondary px-2 py-0.5 rounded text-[10px] font-bold">LIVE</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">person_search</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Verified Teachers</div>
+<div class="text-xs text-on-surface-variant">Active in the marketplace</div>
+</div>
+</div>
+<div class="font-headline-md text-primary">12,400+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">fact_check</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">CBC Certifications</div>
+<div class="text-xs text-on-surface-variant">Validated by EduMarket</div>
+</div>
+</div>
+<div class="font-headline-md text-secondary">8,120</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Props -->
+<section class="bg-surface-container-low py-20">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Why Kenyan Schools Choose Us</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">We solve the teacher shortage with localized expertise and radical transparency.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">security</span>
+<h3 class="font-bold text-xl mb-3">TSC Verification Lock</h3>
+<p class="text-on-surface-variant">Every profile is cross-referenced with TSC registers. No more ghost credentials or unverified academic papers.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">payments</span>
+<h3 class="font-bold text-xl mb-3">Salary Transparency</h3>
+<p class="text-on-surface-variant">All teachers list their expected salary bands in KES, reducing negotiation friction by 60%.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h3 class="font-bold text-xl mb-3">48-Hour Shortlisting</h3>
+<p class="text-on-surface-variant">Submit your requirements and receive a hand-picked shortlist of local teachers within two working days.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Teacher Cards Preview -->
+<section class="py-24 max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Featured Local Educators</h2>
+<p class="text-on-surface-variant">Top-rated teachers currently available for placement in Nairobi, Mombasa, and Kisumu.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:underline">
+                    Browse all teachers <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Teacher Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-outline-variant hover:border-primary/50 transition-colors group">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional Kenyan teacher in a modern, brightly lit classroom setting, smiling warmly at the camera. She is wearing professional attire and holding a digital tablet. The background features CBC curriculum posters and a clean educational environment with soft daylight, emphasizing trust and competence. High-quality photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdBClp-E8sR48AtBWojwVgyezZrskwbLqnTQRx0c33r1EBtgdH6x4cS88aANK5g8NTu2k-3N6SFIyKaODUyxgG7P9pySn6EAltVNURDA2ESJY0Ab8IWG4VHfzHQzFqWds4eC_YWHgfmJV3wunGPWzatYeEbR_heDMmcM0U0YLNLwVIDozlBT84SpCV_iEjaf6HscgIJcDAHWjkTnKncXQCjXKmPN1v-uLXF9wc8ZzCIR_tKwBR68me"/>
+<div class="absolute top-4 left-4 z-20 flex gap-2">
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-1 rounded">TSC VERIFIED</span>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">CBC EXPERT</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg text-on-surface">Mary Wambui</h4>
+<p class="text-sm text-on-surface-variant">Maths &amp; Physics • 6 yrs exp</p>
+</div>
+<div class="text-right">
+<div class="text-xs text-on-surface-variant font-bold">EXPECTED SALARY</div>
+<div class="text-primary font-bold">KES 45k - 60k</div>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span class="text-sm text-on-surface-variant">Based in Nairobi (Willing to relocate)</span>
+</div>
+<button class="w-full bg-surface-container-high text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
+                            Request Interview
+                        </button>
+</div>
+</div>
+<!-- Teacher Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-outline-variant hover:border-primary/50 transition-colors group">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A young male educator standing in a well-equipped school library in Kenya. He is wearing a sharp, local professional outfit and engaged with a scientific model. The atmosphere is academic, aspirational, and professional, lit with warm interior lighting and natural window light. Professional portrait with a focus on educational excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1Szrb8BmuBam-siiMbVfe5ObgyMXwSjMVErYuj8HhPIQPsbkRPa8S0SmRduXkC52D85tpiosWYHze93SYCQ7vQQa77eFhvIamjiR5itG4vXLkXO_G_sHQ97vsCHgK_qAXxmSY2QkSzfaU0-RiWcvDxARCsWW4NInkUCXozt0gl-FMw2F2TTiLgHExnS34KuJnvZNivHmqdce4C_9bp7U68G66xr7jV2r43XeBCEKUjccnN8w5YInX"/>
+<div class="absolute top-4 left-4 z-20 flex gap-2">
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-1 rounded">TSC VERIFIED</span>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded">8-4-4 SENIOR</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg text-on-surface">John Omondi</h4>
+<p class="text-sm text-on-surface-variant">English &amp; Lit • 12 yrs exp</p>
+</div>
+<div class="text-right">
+<div class="text-xs text-on-surface-variant font-bold">EXPECTED SALARY</div>
+<div class="text-primary font-bold">KES 75k - 95k</div>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span class="text-sm text-on-surface-variant">Based in Kisumu (Permanent only)</span>
+</div>
+<button class="w-full bg-surface-container-high text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
+                            Request Interview
+                        </button>
+</div>
+</div>
+<!-- Teacher Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-outline-variant hover:border-primary/50 transition-colors group">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An experienced female primary school teacher in a colorful Kenyan classroom. She is demonstrating a craft project, representing CBC's competency-based approach. The lighting is bright and cheerful, with focus on the teacher's friendly and encouraging expression. The setting is modern and resource-rich, showcasing the growth of Kenyan education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBV827jspO_DLJ3_Iqzo9OR2CyyuWR656JYitKSmOhGsJ-AiD0OulOz4b4-CeX6C0ycoSxWyyGeg4Xgqh2Epes7RA6f0xzyEVQmBdp9fayW0dBRCU0c6NL88iT-Xu-2en6RHnj1i8n4I4UR2T4ZsOgFMHniv1v_TsFK3rAc6LOE-T52EAouuRntqp-Y-auXjJgo0EL7L8v-jUWXExgBztMci1xcVq-DFYZQRVmIfCCXc-Z57O2g2w3"/>
+<div class="absolute top-4 left-4 z-20 flex gap-2">
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-1 rounded">TSC VERIFIED</span>
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-1 rounded">GRADE 1-3 CBC</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg text-on-surface">Sarah Njeri</h4>
+<p class="text-sm text-on-surface-variant">Lower Primary • 4 yrs exp</p>
+</div>
+<div class="text-right">
+<div class="text-xs text-on-surface-variant font-bold">EXPECTED SALARY</div>
+<div class="text-primary font-bold">KES 35k - 50k</div>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span class="text-sm text-on-surface-variant">Based in Mombasa (Local preferred)</span>
+</div>
+<button class="w-full bg-surface-container-high text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
+                            Request Interview
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Search CTA -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24">
+<div class="bg-primary rounded-[2rem] p-12 text-center text-on-primary relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+
+</div>
+<div class="relative z-10">
+<h2 class="font-display-lg-mobile md:text-headline-md font-bold mb-6">Ready to find your next top educator?</h2>
+<p class="font-body-lg text-on-primary-container mb-10 max-w-2xl mx-auto">Skip the generic job boards. Get a shortlist of TSC-verified teachers who fit your school's culture and budget.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold text-lg hover:bg-secondary/90 transition-all">
+                            Request Shortlist
+                        </button>
+<button class="bg-transparent border border-on-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
+                            Talk to Recruitment Expert
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant">
+<div class="w-full py-12 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<span class="font-headline-md text-headline-md font-bold text-primary mb-4 block">EduMarket Kenya</span>
+<p class="text-on-surface-variant max-w-md">The leading digital marketplace for verified teachers and CBC materials in East Africa. TSC Accredited Partner #2024-TSC-082.</p>
+</div>
+<div>
+<h5 class="font-bold text-on-surface mb-4">Quick Links</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Directory</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="for-schools.html#verification">Verification Process</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-surface mb-4">Contact Us</h5>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">mail</span> support@edumarket.co.ke
+                        </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">phone</span> +254 700 000 000
+                        </li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 EduMarket Kenya. TSC Accredited Partner. All prices in KES.</p>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="for-schools.html#terms">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="for-schools.html#privacy">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Apply fade-in effect to cards
+            document.querySelectorAll('.group').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+
+<!-- Legal & Contact anchors (linked from global footer/nav) -->
+<section class="py-16 bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-margin-desktop space-y-12">
+    <div id="verification"><h2 class="font-headline font-bold text-2xl text-primary mb-2">Verification Process</h2><p class="text-on-surface-variant max-w-2xl">Every EduMarket educator is TSC-verified, with accreditation, professional history and curriculum expertise pre-vetted before listing.</p></div>
+    <div id="accreditation"><h2 class="font-headline font-bold text-2xl text-primary mb-2">Accreditation</h2><p class="text-on-surface-variant max-w-2xl">We are a TSC-accredited recruitment partner. Placements comply with the Teachers Service Commission framework.</p></div>
+    <div id="terms"><h2 class="font-headline font-bold text-2xl text-primary mb-2">Terms of Service</h2><p class="text-on-surface-variant max-w-2xl">By using EduMarket you agree to our standard marketplace terms. Schools pay only after a successful placement.</p></div>
+    <div id="privacy"><h2 class="font-headline font-bold text-2xl text-primary mb-2">Privacy Policy</h2><p class="text-on-surface-variant max-w-2xl">We collect only the data required to match schools and teachers, and never sell educator data to third parties.</p></div>
+    <div id="contact"><h2 class="font-headline font-bold text-2xl text-primary mb-2">Contact Us</h2><p class="text-on-surface-variant max-w-2xl">Reach the EduMarket team at hello@edumarket.kenya or via the in-app Support centre.</p></div>
+  </div>
+</section>
+
+<script src="/ui.js"></script>
+</body></html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | EduMarket Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&family=Source+Sans+3:wght@600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&family=Source+Sans+3:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f7f9ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#181c20",
+                    "surface-tint": "#255dad",
+                    "on-tertiary-fixed-variant": "#832604",
+                    "inverse-primary": "#abc7ff",
+                    "surface-container-high": "#e5e8ee",
+                    "secondary": "#3b6934",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#661a00",
+                    "primary-container": "#004a99",
+                    "secondary-fixed-dim": "#a1d494",
+                    "surface-container-highest": "#dfe3e9",
+                    "outline-variant": "#c2c6d3",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f1f4fa",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "on-surface": "#181c20",
+                    "primary": "#00346f",
+                    "tertiary-fixed": "#ffdbd0",
+                    "inverse-surface": "#2d3135",
+                    "on-primary-fixed-variant": "#00458f",
+                    "primary-fixed": "#d7e2ff",
+                    "inverse-on-surface": "#eef1f7",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7f9ff",
+                    "surface-variant": "#dfe3e9",
+                    "on-secondary-container": "#3f6d38",
+                    "on-primary-container": "#9bbdff",
+                    "surface": "#f7f9ff",
+                    "surface-container": "#ebeef4",
+                    "on-surface-variant": "#424751",
+                    "primary-fixed-dim": "#abc7ff",
+                    "outline": "#737783",
+                    "secondary-fixed": "#bcf0ae",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#ffa68a",
+                    "on-secondary-fixed": "#002201",
+                    "on-primary-fixed": "#001b3f",
+                    "on-secondary-fixed-variant": "#23501e",
+                    "secondary-container": "#b9eeab",
+                    "surface-dim": "#d7dae0",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "tertiary-container": "#8a2b08",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "margin-desktop": "32px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Source Sans 3"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-glow {
+            background: radial-gradient(circle at center, rgba(37, 93, 173, 0.05) 0%, transparent 70%);
+        }
+        .pricing-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-gradient-to-b from-surface to-surface-container-low border-b border-outline-variant shadow-sm">
+  <div class="max-w-container-max mx-auto px-margin-desktop h-20 flex justify-between items-center">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="font-headline font-bold text-xl text-primary flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">school</span> EduMarket</a>
+      <nav class="relative hidden md:flex items-center gap-7" style="position:relative">
+        <a class="nav-directory font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Directory</a>
+        <a class="nav-pricing font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+        <a class="nav-schools font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="for-schools.html">For Schools</a>
+        <a class="nav-teachers font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="login.html">For Teachers</a>
+        <span id="nav-indicator" style="position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,#00346f,#661a00); border-radius:9999px; transition:left .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1); opacity:0;"></span>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="text-on-surface-variant hover:text-primary font-body">Sign in</a>
+      <a href="post-hiring-request.html" class="bg-tertiary text-on-tertiary px-5 py-2.5 rounded-full font-label font-semibold hover:opacity-90 transition active:scale-95">Request Shortlist</a>
+    </div>
+  </div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Section -->
+<section class="text-center mb-16 max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full mb-6">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm">TSC ACCREDITED PARTNER</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-4">Quality Education Staffing, <span class="text-primary">Simplified.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Transparent pricing for Kenyan schools. Find CBC-trained teachers and TSC-verified professionals with zero hidden fees.</p>
+</section>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 relative">
+<div class="absolute inset-0 bento-glow -z-10"></div>
+<!-- Tier 1: Single Request -->
+<div class="bg-surface border border-outline-variant p-8 rounded-xl pricing-card-hover transition-all duration-300 flex flex-col">
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Single Request</h3>
+<p class="text-on-surface-variant text-sm">Perfect for urgent, one-off replacements or niche subject specialists.</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-on-surface-variant font-bold">KES</span>
+<span class="text-4xl font-extrabold text-on-background">5,000</span>
+</div>
+<p class="text-on-surface-variant font-label-sm mt-1">Per successful match</p>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">TSC Verification Check</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Background Reference Check</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Direct Contact Info</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary-fixed transition-colors">Start Hiring</button>
+</div>
+<!-- Tier 2: Shortlist Package (Featured) -->
+<div class="bg-surface border-2 border-primary p-8 rounded-xl pricing-card-hover transition-all duration-300 flex flex-col relative scale-105 shadow-xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full font-label-sm">
+                    MOST POPULAR
+                </div>
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Shortlist Package</h3>
+<p class="text-on-surface-variant text-sm">Ideal for schools expanding their departments or holiday recruitment.</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-on-surface-variant font-bold">KES</span>
+<span class="text-4xl font-extrabold text-on-background">15,000</span>
+</div>
+<p class="text-on-surface-variant font-label-sm mt-1">Up to 5 matches per term</p>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md font-bold">All Single Request Features</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">CBC Competency Assessment</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Priority Directory Support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md text-primary">Save KES 10,000</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-tertiary-container text-on-tertiary-container font-bold hover:opacity-90 transition-opacity">Request Shortlist</button>
+</div>
+<!-- Tier 3: School Subscription -->
+<div class="bg-surface border border-outline-variant p-8 rounded-xl pricing-card-hover transition-all duration-300 flex flex-col">
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">School Subscription</h3>
+<p class="text-on-surface-variant text-sm">Best for large private or international schools with high turnover.</p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-on-surface-variant font-bold">KES</span>
+<span class="text-4xl font-extrabold text-on-background">50,000</span>
+<span class="text-on-surface-variant text-sm ml-1">/year</span>
+</div>
+<p class="text-on-surface-variant font-label-sm mt-1">Unlimited matches</p>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md font-bold">All Shortlist Features</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Dedicated Account Manager</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">School Brand Profile</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Free Job Ad Posting</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary-fixed transition-colors">Contact Sales</button>
+</div>
+</div>
+<!-- Explain "Per Match" Pricing -->
+<section class="bg-surface-container-low rounded-2xl p-8 md:p-12 mb-20 border border-outline-variant flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<h2 class="font-headline-md text-headline-md mb-6">How "Per Match" Pricing Works</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+<div>
+<p class="font-bold text-on-surface">Post Your Need</p>
+<p class="text-on-surface-variant">Tell us the subject, grade (CBC/8-4-4), and location. This is completely free.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+<div>
+<p class="font-bold text-on-surface">Review Verified Profiles</p>
+<p class="text-on-surface-variant">We send you 3-5 verified teacher profiles who fit your exact criteria.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+<div>
+<p class="font-bold text-on-surface">Payment on Connection</p>
+<p class="text-on-surface-variant">The <strong>KES 5,000</strong> match fee is only payable once you decide to interview a candidate and request their direct contact details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-[400px] h-[300px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="A professional Kenyan woman school administrator in a bright office, smiling while looking at a tablet showing teacher profiles. The background is a clean, modern school environment with soft daylight and green plants, conveying trust and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3-B-zdB22AbPc2xLNqBQvkY9nccpH96PP7mGH0HB-zB1OTC9apOIggqIUrniG5z106FS0VGQnbW2_Mflc-Ep30U-GmxfIyxuA9HZVyjD7gtOlpYWVKu7yHw1Jo3Xu114kD0zctQiROah1wMTToWYKhqeXWOJqtuk0pgoxLAYhpQ1N8ye9ogadFKeX5piwfl2ry2tqUaeOw1tgMWJTjqxqBwlil2Sd9BjRKwkxoTuDmXTMw9f4HUrS"/>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto mb-20">
+<h2 class="font-headline-md text-headline-md text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden transition-all duration-200">
+<button class="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-bold">How do you verify the TSC status of teachers?</span>
+<span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+</button>
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-bright hidden">
+<p class="text-on-surface-variant">We cross-reference every applicant's TSC number with the official TSC Online portal. We also manually verify academic certificates and require a valid Certificate of Good Conduct for all listings on EduMarket Kenya.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden transition-all duration-200">
+<button class="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-bold">Are the teachers trained for the CBC curriculum?</span>
+<span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+</button>
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-bright hidden">
+<p class="text-on-surface-variant">Yes. Our advanced filters allow you to specifically search for teachers who have completed their Competency-Based Curriculum (CBC) induction. We highlight their specific training levels (Grade 1-6 or Junior Secondary).</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden transition-all duration-200">
+<button class="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-bold">Do you accept Lipa Na M-PESA?</span>
+<span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+</button>
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-bright hidden">
+<p class="text-on-surface-variant">Yes, we support Lipa Na M-PESA Paybill for all transactions. Once you request a match or package, a prompt will be sent to your registered phone number or you can use our Paybill number provided at checkout.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden transition-all duration-200">
+<button class="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-bold">What happens if a teacher we hire leaves within a month?</span>
+<span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+</button>
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-bright hidden">
+<p class="text-on-surface-variant">We offer a 30-day "Peace of Mind" guarantee. If a teacher placed through our platform resigns or is found unsuitable within the first month, we will provide a replacement shortlist at no additional match fee.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary-container text-on-primary-container rounded-3xl p-12 text-center">
+<h2 class="font-display-lg-mobile md:font-headline-md text-white mb-6">Ready to find your next top-tier educator?</h2>
+<p class="text-blue-100 mb-8 max-w-2xl mx-auto">Join over 150 Kenyan schools using EduMarket to streamline their recruitment and focus on what matters: the students.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-3 rounded-lg font-bold text-lg Active:scale-95 duration-150">Create School Profile</button>
+<button class="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">Book a Demo</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-margin-desktop border-t border-outline-variant bg-surface-container-highest dark:bg-on-background">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-2">EduMarket Kenya</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant">© 2024 EduMarket Kenya. TSC Accredited Partner. All prices in KES.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="for-schools.html#terms">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="for-schools.html#privacy">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="for-schools.html#verification">Verification Process</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="for-schools.html#contact">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover effects or light mode toggling can be added here
+        document.addEventListener('DOMContentLoaded', () => {
+            // Placeholder for future JS interactions
+        });
+    </script>
+
+<script src="/ui.js"></script>
+</body></html>
