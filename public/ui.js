@@ -1,35 +1,35 @@
-<!-- Shared UI: sliding active-nav indicator, auth-aware "For Teachers" link, dead-button router -->
-<script>
 (function () {
   function label(el) { return (el.textContent || '').trim().toLowerCase(); }
 
-  // 1) Auth-aware "For Teachers" link
+  // 1) Auth-aware "For Teachers" link (don't push logged-in users to login)
   var ft = document.querySelector('a[href="login.html"]');
   if (ft && label(ft) === 'for teachers') {
-    fetch('/api/auth/me', { credentials: 'same-origin' }).then(function (r) {
-      return r.ok ? r.json() : null;
-    }).then(function (d) {
-      if (d && d.user) {
-        ft.setAttribute('href', d.user.role === 'teacher' ? 'teacher-dashboard.html' : 'post-hiring-request.html');
-      }
-    }).catch(function () {});
+    fetch('/api/auth/me', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && d.user) {
+          ft.setAttribute('href', d.user.role === 'teacher' ? 'teacher-dashboard.html' : 'post-hiring-request.html');
+        }
+      })
+      .catch(function () {});
   }
 
-  // 2) Sliding active indicator
+  // 2) Sliding active indicator (hidden on the index/home page)
   function moveIndicator() {
     var nav = document.querySelector('nav');
     if (!nav) return;
     var indicator = document.getElementById('nav-indicator');
     if (!indicator) return;
+    var path = (location.pathname.split('/').pop() || 'index.html');
+    if (path === 'index.html' || path === '') { indicator.style.opacity = '0'; return; }
     var active = nav.querySelector('[aria-current="page"]');
-    var cont = nav.getBoundingClientRect();
     if (!active) { indicator.style.opacity = '0'; return; }
+    var cont = nav.getBoundingClientRect();
     var r = active.getBoundingClientRect();
     indicator.style.opacity = '1';
     indicator.style.left = (r.left - cont.left) + 'px';
     indicator.style.width = r.width + 'px';
   }
-  // animate only after fonts/layout settle
   window.addEventListener('load', function () { setTimeout(moveIndicator, 60); });
   window.addEventListener('resize', moveIndicator);
 
@@ -57,4 +57,3 @@
     if (txt && txt.indexOf('view bio') !== -1) { e.preventDefault(); location.href = 'browse.html'; }
   });
 })();
-</script>

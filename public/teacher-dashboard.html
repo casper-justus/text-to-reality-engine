@@ -120,52 +120,6 @@
 
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
-<div class="flex h-screen overflow-hidden">
-<!-- SideNavBar -->
-
-<div class="flex items-center gap-3 mb-8 px-2">
-<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
-</div>
-<div>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">EduMarket Kenya</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant">TSC Verified Marketplace</p>
-</div>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
-<span class="material-symbols-outlined">person_search</span>
-<span class="font-label-sm">Directory</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-label-sm">Pricing</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
-<span class="material-symbols-outlined">school</span>
-<span class="font-label-sm">For Schools</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cast_for_education</span>
-<span class="font-label-sm">For Teachers</span>
-</a>
-</nav>
-<div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-label-sm">Settings</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
-<span class="material-symbols-outlined">help</span>
-<span class="font-label-sm">Support</span>
-</a>
-<div class="mt-4 p-4 bg-primary-container rounded-xl text-on-primary-container">
-<p class="font-label-sm mb-2 opacity-90">Need help with CBC?</p>
-<button class="w-full py-2 bg-primary text-on-primary rounded-lg font-label-sm active:scale-95 transition-transform">Request Shortlist</button>
-</div>
-</div>
-
-<!-- Main Content Canvas -->
 <main class="flex-1 overflow-y-auto relative">
 <!-- TopNavBar -->
 <header class="sticky top-0 z-50 w-full bg-gradient-to-b from-surface to-surface-container-low border-b border-outline-variant shadow-sm">
@@ -176,7 +130,7 @@
         <a class="nav-directory font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="browse.html">Directory</a>
         <a class="nav-pricing font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
         <a class="nav-schools font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="for-schools.html">For Schools</a>
-        <a class="nav-teachers font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" href="login.html">For Teachers</a>
+        <a class="nav-teachers font-body text-body-md text-on-surface-variant hover:text-primary transition-colors" aria-current="page" href="login.html">For Teachers</a>
         <span id="nav-indicator" style="position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,#00346f,#661a00); border-radius:9999px; transition:left .35s cubic-bezier(.4,0,.2,1), width .35s cubic-bezier(.4,0,.2,1); opacity:0;"></span>
       </nav>
     </div>
@@ -404,7 +358,6 @@
 </div>
 </footer>
 </main>
-</div>
 <!-- Mobile Bottom Navigation Shell -->
 <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex justify-around items-center h-16 z-50">
 <button class="flex flex-col items-center gap-1 text-on-surface-variant">
