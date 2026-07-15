@@ -1,18 +1,24 @@
 (function () {
   function label(el) { return (el.textContent || '').trim().toLowerCase(); }
 
-  // 1) Auth-aware "For Teachers" link (don't push logged-in users to login)
-  var ft = document.querySelector('a[href="login.html"]');
-  if (ft && label(ft) === 'for teachers') {
-    fetch('/api/auth/me', { credentials: 'same-origin' })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) {
-        if (d && d.user) {
-          ft.setAttribute('href', d.user.role === 'teacher' ? 'teacher-dashboard.html' : 'post-hiring-request.html');
-        }
-      })
-      .catch(function () {});
+  // 1) Auth-aware "For Teachers" link + hide Sign in when logged in
+  function applyAuth(d) {
+    if (d && d.user) {
+      var ft = document.querySelector('a[href="login.html"]');
+      if (ft && label(ft) === 'for teachers') {
+        ft.setAttribute('href', d.user.role === 'teacher' ? 'teacher-dashboard.html' : 'post-hiring-request.html');
+      }
+      document.querySelectorAll('.nav-signin').forEach(function (el) { el.style.display = 'none'; });
+      document.querySelectorAll('.nav-account').forEach(function (el) {
+        el.style.display = '';
+        el.setAttribute('href', d.user.role === 'teacher' ? 'teacher-dashboard.html' : 'post-hiring-request.html');
+      });
+    }
   }
+  fetch('/api/auth/me', { credentials: 'same-origin' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(applyAuth)
+    .catch(function () {});
 
   // 2) Sliding active indicator (hidden on the index/home page)
   function moveIndicator() {
