@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { requireUser } from "./_db.js";
 
-export async function serveGuarded(path, request, ctx) {
+export async function serveGuarded(file, request, ctx) {
   const user = await requireUser(request, ctx);
   if (!user) {
     return new Response(null, {
@@ -10,7 +11,7 @@ export async function serveGuarded(path, request, ctx) {
     });
   }
   try {
-    const body = await readFile(path, "utf8");
+    const body = await readFile(join(import.meta.dirname, "..", "public", file), "utf8");
     return new Response(body, {
       headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" },
     });
