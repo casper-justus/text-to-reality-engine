@@ -407,5 +407,6 @@
         }
     </script>
 
+<script>fetch('/api/auth/me',{credentials:'same-origin'}).then(r=>r.ok?r.json():null).then(d=>{if(!d||!d.user){location.href='login.html';}}).catch(()=>{location.href='login.html';});</script>
 <script src="/ui.js"></script>
 </body></html>

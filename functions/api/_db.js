@@ -77,6 +77,14 @@ export async function listTeachers(ctx) {
   return [...mem.teachers.values()].sort((a,b)=> a.band.localeCompare(b.band));
 }
 
+export async function getTeacher(ctx, id) {
+  if (!id) return null;
+  const db = await getDb(ctx);
+  if (db) return await db.prepare("SELECT * FROM teachers WHERE id=?").bind(id).first();
+  memEnsure();
+  return mem.teachers.get(id) || null;
+}
+
 export async function createHiringRequest(ctx, data) {
   const db = await getDb(ctx);
   const id = "hr_" + crypto.randomUUID();
@@ -190,6 +198,15 @@ export function getToken(request) {
   if (!c) return null;
   const m = c.match(/(?:^|;\s*)em_session=([^;]+)/);
   return m ? m[1] : null;
+}
+
+// Resolve the authenticated user from the session cookie, or null.
+export async function requireUser(request, ctx) {
+  const token = getToken(request);
+  if (!token) return null;
+  const payload = await verifyToken(token, ctx);
+  if (!payload || !payload.sub) return null;
+  return publicUser({ id: payload.sub, name: payload.name, email: payload.email, role: payload.role });
 }
 
 export function json(data, status=200, headers={}) {

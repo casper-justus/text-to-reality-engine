@@ -26,7 +26,11 @@
         }
         .comparison-grid {
             display: grid;
-            grid-template-columns: 240px repeat(3, 1fr);
+            grid-template-columns: 200px repeat(3, minmax(220px, 1fr));
+        }
+        .compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        @media (max-width: 768px) {
+            .comparison-grid { grid-template-columns: 140px repeat(3, minmax(200px, 1fr)); }
         }
     </style>
 <!-- Tailwind Configuration -->
@@ -161,6 +165,7 @@
 </header>
 <!-- Comparison Table Container -->
 <section class="px-margin-desktop max-w-container-max mx-auto mt-stack-lg">
+<div class="compare-scroll">
 <div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
 <!-- Comparison Grid Header (Static Row) -->
 <div class="comparison-grid border-b border-outline-variant bg-surface-container-lowest">
@@ -360,9 +365,10 @@
 </div>
 </div>
 </div>
+</div>
 </section>
 <!-- Sticky Bottom Action Rail -->
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 glass-header border-t border-outline-variant md:left-64">
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 glass-header border-t border-outline-variant">
 <div class="max-w-container-max mx-auto px-margin-desktop py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
 <div class="flex items-center gap-4">
 <div class="flex -space-x-3">
@@ -384,7 +390,7 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-stack-lg relative z-10 md:ml-64">
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-stack-lg relative z-10">
 <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-stack-md">
 <div class="flex flex-col gap-2">
 <span class="font-headline-sm text-headline-sm font-bold text-primary">EduMarket</span>

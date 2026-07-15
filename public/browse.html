@@ -172,7 +172,7 @@ function card(t){
   const verified = t.verified ? `<span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">verified</span>` : '';
   return `
   <div class="bg-surface-container-lowest rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition p-4 flex flex-col gap-3">
-    <div class="flex items-start gap-3">
+    <a href="/teacher?id=${t.id}" class="flex items-start gap-3">
       ${avatar(t)}
       <div class="min-w-0 flex-1">
         <div class="flex items-center justify-between gap-2">
@@ -182,7 +182,7 @@ function card(t){
         <p class="text-body-sm text-on-surface-variant truncate">${t.subject} · ${t.experience} yrs</p>
         <p class="text-body-sm text-on-surface-variant truncate flex items-center gap-1">${verified} ${t.location} · ${t.curriculum}</p>
       </div>
-    </div>
+    </a>
     <div class="flex items-center justify-between pt-2 border-t border-outline-variant">
       <span class="font-headline font-bold text-primary text-base">${fmt(t.salary_low)}–${fmt(t.salary_high)}</span>
       <button onclick="openModal('${t.id}')" class="text-tertiary text-body-sm font-semibold hover:underline">View profile</button>
@@ -235,7 +235,8 @@ function openModal(id){
       <div><dt class="text-on-surface-variant text-xs uppercase">Status</dt><dd class="text-verified">${verified}</dd></div>
       <div><dt class="text-on-surface-variant text-xs uppercase">Expected salary</dt><dd class="font-headline font-bold text-primary">${fmt(t.salary_low)}–${fmt(t.salary_high)}</dd></div>
     </dl>
-    <p class="mt-4 text-on-surface-variant">Pre-vetted educator from the EduMarket marketplace. Request a shortlist to start the interview process.</p>`;
+     <p class="mt-4 text-on-surface-variant">Pre-vetted educator from the EduMarket marketplace. Request a shortlist to start the interview process.</p>
+     <a href="/teacher?id=${t.id}" class="mt-4 inline-block bg-tertiary text-on-tertiary px-5 py-2.5 rounded-full font-label font-semibold hover:opacity-90 transition active:scale-95">View full profile</a>`;
   const m=document.getElementById('modal');
   m.classList.remove('hidden'); m.classList.add('flex');
 }
